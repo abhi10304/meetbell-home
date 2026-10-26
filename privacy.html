@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meetbell privacy policy</title>
+    <meta name="description" content="Meetbell has no servers, no accounts, no analytics and no advertising. Your calendar is read on your computer and stays there." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Meetbell" />
+    <meta property="og:title" content="Meetbell privacy policy" />
+    <meta property="og:description" content="Meetbell has no servers, no accounts, no analytics and no advertising. Your calendar is read on your computer and stays there." />
+    <meta property="og:url" content="https://meetbell.accessisight.com/privacy.html" />
+    <meta property="og:image" content="https://meetbell.accessisight.com/img/og.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Meetbell: your meeting reminder is a plane. A little airliner at golden hour towing a reminder card with a Join now button." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <a class="brand" href="./"><img src="img/icon.png" alt="" />Meetbell</a>
+        <nav><a href="./">Home</a><a href="./#support">Support</a></nav>
+      </header>
+
+      <main class="doc">
+        <h1>Privacy policy</h1>
+        <p class="muted"><em>Last updated: 25 October 2026</em></p>
+        <p>Meetbell is a desktop app that reminds you of your meetings. It is built so that <strong>nothing about you leaves your computer except what is needed to show your calendar and the weather</strong>, and none of it reaches us: the app has no servers, no accounts, no analytics and no advertising. Meetbell is made by Abhishek Johri, an independent developer in India.</p>
+
+        <h2>What the app reads, and where it goes</h2>
+        <div class="table">
+          <table>
+            <thead>
+              <tr><th>What</th><th>Why</th><th>Where it goes</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Your calendar events (title, time, meeting link, location, organizer and attendee addresses)</td>
+                <td>To fly a reminder before each meeting, open the meeting, mark VIP meetings and write the "running late" message</td>
+                <td>Read directly from Microsoft 365 / Outlook.com, Google Calendar, iCloud or another CalDAV calendar (Fastmail, Yahoo, Zoho, GMX, WEB.DE, Nextcloud, Synology…), a calendar (.ics) link you add, classic Outlook on this computer, or (on a Mac) the calendars in Apple's Calendar app. Meetbell only reads them: Microsoft and Google grant read-only access, and an app password or calendar link is used only to read. Right after you connect a calendar, its next 7 days are read once, to show you its next meeting. Never sent anywhere else.</td>
+              </tr>
+              <tr>
+                <td>The last meetings read from each calendar (title, time, meeting link, location, organizer and attendees; not the invitation text)</td>
+                <td>So reminders still come right after the computer starts, while you're offline, or while a calendar can't be reached</td>
+                <td>Kept on your computer in <code>cache.json</code> in the app's folder, for 24 hours at most; a calendar you remove is taken out of it. Never sent anywhere.</td>
+              </tr>
+              <tr>
+                <td>Sign-in tokens for Microsoft or Google (only if you connect those)</td>
+                <td>To keep reading your calendar without signing in again</td>
+                <td>Stored on your computer, encrypted by Windows (DPAPI) or the macOS Keychain. Sent only to Microsoft or Google. Removed when you sign out, and on Windows when you uninstall the app (see Your control). If you untick the calendar box on Google's consent page, Meetbell has nothing it may read and gives the sign-in back to Google at once (a revoke request to oauth2.googleapis.com).</td>
+              </tr>
+              <tr>
+                <td>Your account's name and e-mail address (only if you sign in with Microsoft or Google)</td>
+                <td>To show which account is connected, put your first name on the boarding pass, and recognise meetings you declined</td>
+                <td>Stored on your computer, encrypted with the sign-in. Never sent anywhere.</td>
+              </tr>
+              <tr>
+                <td>The e-mail address you sign in with (only when you press a sign-in button)</td>
+                <td>So Microsoft's or Google's sign-in page opens on that account, in your language, without asking you for it again</td>
+                <td>Sent only to Microsoft or Google, as part of the sign-in page that opens in your browser: the address you typed or picked (login_hint); for a Microsoft work account also your organisation's tenant ID when Meetbell knows it (domain_hint); and Meetbell's language (ui_locales for Microsoft, hl for Google). Nothing is sent before you press the button.</td>
+              </tr>
+              <tr>
+                <td>The domain of the e-mail address you type to connect a calendar (only after you press Continue)</td>
+                <td>To find out which service holds your calendar (Microsoft 365, Google Workspace, iCloud, Zoho, a CalDAV server…), so you don't have to know</td>
+                <td>For Gmail, Outlook.com, iCloud, Yahoo, Fastmail, Zoho, GMX, WEB.DE and Proton addresses, nothing: Meetbell knows them. For any other address, only its domain (the part after the @), never the address itself: Microsoft's public sign-in service (login.microsoftonline.com) is asked whether it is a Microsoft 365 organisation, and your DNS resolver (usually your internet provider's or your company's) for the domain's mail servers (an MX lookup). If neither tells, your DNS resolver is asked for the domain's calendar server (<code>_caldavs._tcp.&lt;domain&gt;</code>), and <code>https://&lt;domain&gt;/.well-known/caldav</code> is asked, without any user name or password, whether it has one.</td>
+              </tr>
+              <tr>
+                <td>The accounts already set up on this computer (Windows): the work or school account Windows or Office is signed in with, the Microsoft account Windows uses, and classic Outlook's accounts</td>
+                <td>To offer them in the Calendars window, so you can connect one with a click</td>
+                <td>Read on your computer (from the Windows registry, without changing it) when the Calendars window opens, and only shown there. Not stored and never sent anywhere; only an address you click goes to Microsoft, as the sign-in hint above.</td>
+              </tr>
+              <tr>
+                <td>Your computer's user name (only when no Microsoft or Google sign-in gives a name)</td>
+                <td>To put a first name on the boarding pass and the flight-log picture</td>
+                <td>Read on your computer when the pass or the picture is drawn; not stored and never sent anywhere. The picture leaves your computer only if you share it yourself, and "Hide my name" leaves the name off.</td>
+              </tr>
+              <tr>
+                <td>The user name and app password of an iCloud or other CalDAV calendar (only if you add one)</td>
+                <td>To read that calendar</td>
+                <td>Stored on your computer, encrypted like the sign-ins. Sent only to that calendar's own server, over an encrypted (https) connection; never to another website, even if the server points somewhere else. For a Zoho account whose region isn't known yet, they are tried on each of Zoho's own regional calendar servers (calendar.zoho.com, .eu, .in, .com.au, .jp, .sa and calendar.zohocloud.ca) at once, to find yours. For Nextcloud you can instead sign in on your own Nextcloud's page in your browser: Meetbell asks your server, without a password, to start its login, opens that page, then asks your server with the one-time token it gave until it hands over an app password. Removed when you remove the calendar.</td>
+              </tr>
+              <tr>
+                <td>Calendar (.ics) links you add</td>
+                <td>To read those calendars</td>
+                <td>Stored on your computer, encrypted like the sign-ins (they work like passwords). Sent only to the calendar's own server, which is asked once when you add the link, to check that it works, before it is kept. Never written to the app's log.</td>
+              </tr>
+              <tr>
+                <td>The calendars on your Mac (only if you allow it)</td>
+                <td>To read the events in Apple's Calendar app</td>
+                <td>macOS asks you first, and you can turn it off in System Settings › Privacy &amp; Security › Calendars. Read on your Mac; nothing is sent anywhere.</td>
+              </tr>
+              <tr>
+                <td>Your work e-mail domain (only if you use "Ask IT" or the admin-approval link in the Calendars window)</td>
+                <td>To find your organisation's Microsoft tenant, so the approval link goes to the right place</td>
+                <td>Sent to Microsoft's public sign-in service (login.microsoftonline.com), which answers with the organisation's ID. Nothing else is sent.</td>
+              </tr>
+              <tr>
+                <td>What's on your clipboard (only in the Calendars window)</td>
+                <td>To paste an app password for you, and to offer a Google secret address you have just copied</td>
+                <td>Read on your computer only when you press Paste, and on the Google calendar-link steps when you come back to the window (only a shortened hint of the address is shown). Not stored and never sent anywhere; a link goes to its calendar only if you add it.</td>
+              </tr>
+              <tr>
+                <td>The city you choose for the weather (its name and map position)</td>
+                <td>To show weather and air quality in the widget</td>
+                <td>While you search for a city, what you type (and the app's language, for the place names) is sent to <a href="https://open-meteo.com">Open-Meteo</a>'s place search; afterwards only the city's map position (latitude and longitude) is sent to Open-Meteo, a free weather service, from your computer. No account and nothing about you is sent; like any website, Open-Meteo sees your internet (IP) address.</td>
+              </tr>
+              <tr>
+                <td>Whether an app is using your microphone or camera right now, whether a full-screen app is running, and whether Windows' "Do not disturb" is on (Windows)</td>
+                <td>To make reminders small and silent while you're on a call, sharing your screen, presenting or not to be disturbed, and to notice that you joined a meeting from another app</td>
+                <td>Checked on your computer when a reminder is about to fly and, while "Notice when I join from another app" is on (the default), a few times from 2 minutes before to 10 minutes after the start of each online meeting you didn't join from Meetbell. Only whether the microphone or camera is in use is read: Meetbell never hears or sees anything. If it was in use, today's meeting log marks that meeting as joined. Nothing is sent.</td>
+              </tr>
+              <tr>
+                <td>Your settings, frequent-flyer miles, the reminders you add, today's meeting log, a count-only summary of past days (how many meetings, how many on time; no titles or people) and the recurring series you mute</td>
+                <td>To remember your choices, show your boarding pass and landing report, make your flight-log picture, and stop reminders for a muted series</td>
+                <td>Stored on your computer in the app's folder. Today's meeting log keeps the meetings' titles until the next day: once Meetbell runs on a later day, only that day's counts are kept, and the summary keeps the counts of up to 400 days. A muted series keeps its title until you unmute it. Never sent anywhere. The flight-log picture is made on your computer and leaves it only if you copy, save or post it yourself.</td>
+              </tr>
+              <tr>
+                <td>A request for the latest version number (only in the versions downloaded from Meetbell's website, not the Microsoft Store or Mac App Store ones)</td>
+                <td>To tell you when a new version is out: the stores update their copies, but a downloaded copy doesn't update itself</td>
+                <td>Once a day, <code>https://abhi10304.github.io/meetbell-site/version.json</code> is asked, with no cookies and nothing about you or your computer: no ID, no settings, no app or system version. The answer is a version number and a link. The website has no analytics; like any website, its host, GitHub, sees your internet (IP) address. Turn it off in Settings › General.</td>
+              </tr>
+              <tr>
+                <td>A log of what the app did and crash reports</td>
+                <td>To find out what went wrong if you ask for help</td>
+                <td>Kept on your computer only, in the app's folder. Calendar links, e-mail addresses, tokens and passwords are taken out before anything is written, and meeting titles are never written. Nothing is uploaded; "Copy diagnostics" copies a short report to your clipboard for you to send yourself.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>When you press <strong>Running late?</strong>, the app opens a Teams chat or an e-mail draft addressed to the organizer. Nothing is sent until you press Send in that app yourself.</p>
+        <p>When you press <strong>Save video</strong> (Share › Flight video), a short clip (about 8 seconds) is made on your computer and saved as a file in your Videos folder (on the Mac App Store version, where you choose): a sample plane with the title you type, never a meeting from your calendar. It leaves your computer only if you share it yourself.</p>
+        <p><strong>Tell me what to improve</strong> on the landing report opens an e-mail draft to the developer with only the app's version in the subject: no meetings, calendar or computer details. Nothing is sent until you press Send yourself.</p>
+        <p>When a reminder can't be shown as a plane (your screen is locked, you're away, or the plane couldn't fly), the app may also show it as a system notification. On the lock screen, and while you're away, that notification says "Meeting" instead of the meeting's title.</p>
+
+        <h2>Google user data</h2>
+        <p>Meetbell's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. Google Calendar data is used only on your computer: to show your reminders, the widget, your boarding pass and landing report, and to address a “running late” message that you choose to send. It is not stored on any server, not used for advertising, not sold, not used to train AI models, and not read by people.</p>
+
+        <h2>What the app does not do</h2>
+        <ul>
+          <li>It does not collect, sell or share personal information.</li>
+          <li>It does not track you, show ads, or use analytics or crash-reporting services.</li>
+          <li>It never writes to your calendar.</li>
+          <li>It does not record your screen, microphone or camera.</li>
+        </ul>
+
+        <h2>Your control</h2>
+        <ul>
+          <li>Disconnect a calendar from the app's Calendars window; its tokens or app password are deleted (and the tokens revoked where the provider supports it), and its meetings leave <code>cache.json</code>.</li>
+          <li>Turn the weather off, or remove your city, in Settings › General.</li>
+          <li>Turn the version check off in Settings › General (in the versions downloaded from the website).</li>
+          <li>Uninstalling Meetbell from the Microsoft Store removes everything it stored. The Windows installer removes your sign-ins, calendar links and <code>cache.json</code>; your settings, miles, reminders, today's meeting log and muted series stay in <code>%APPDATA%\Meetbell</code> for a reinstall, and you can delete that folder (the portable version removes nothing). On a Mac, remove your calendars in Meetbell before deleting the app; what remains is in <code>~/Library/Containers/com.meetbell.app</code>, plus the app's “Meetbell Safe Storage” key in Keychain Access.</li>
+        </ul>
+
+        <h2>Children</h2>
+        <p>The app is a work tool and is not directed at children.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy changes, the new version will be published at this address with a new date.</p>
+
+        <h2>Contact</h2>
+        <p>Questions: <a href="mailto:elyxaj@gmail.com">elyxaj@gmail.com</a></p>
+      </main>
+
+      <footer>
+        <div class="row">
+          <span>Made with <span class="heart">♥</span> by Abhishek Johri</span>
+          <span><a href="./">Meetbell</a></span>
+        </div>
+        <p>© 2026 Abhishek Johri. Teams, Outlook, Microsoft 365, Zoom, Google Meet, Google Calendar, Webex, Slack, iCloud and other names are trademarks of their owners; Meetbell is not affiliated with them.</p>
+      </footer>
+    </div>
+  </body>
+</html>
